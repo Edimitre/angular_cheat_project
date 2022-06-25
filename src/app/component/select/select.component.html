@@ -1,0 +1,81 @@
+<div class="container p-4">
+
+    
+
+    <div class="card bg-secondary">
+
+
+        <div class="h2 text-center">Form with validator and object select</div>
+        <div class="container">
+
+            <form [formGroup]="selectForm" (ngSubmit)="onSubmit(selectForm.value)">
+
+                <div class="form-group">
+
+
+
+                    <!-- select car -->
+                    <div class="mb-3">
+                        <label for="cars" class="form-label">Cars</label>
+                        <select class="form-control" aria-label="Default select example" formControlName="car" id="cars"
+                            required>
+                            <option selected value="">Choose car</option>
+                            <option *ngFor="let car of carList">{{car.name}}</option>
+                        </select>
+
+                        <div class="form-text" *ngIf="selectForm.controls['car'].invalid">pls select a car</div>
+                    </div>
+
+
+
+
+                    <!-- select id-->
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Enter Id</label>
+                        <input type="number" class="form-control" id="id" aria-describedby="subbmit id"
+                            formControlName="id" required>
+
+                        <div class="form-text" *ngIf="selectForm.controls['id'].invalid">invalid id</div>
+                    </div>
+
+                    <!-- select username -->
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">userName</label>
+                        <input type="text" class="form-control" id="userName" aria-describedby="emailHelp"
+                            formControlName="userName" required>
+
+                        <div class="form-text" *ngIf="selectForm.controls['userName'].invalid">username required</div>
+                    </div>
+
+                    <div class="container text-center">
+                        <button type="submit" class="btn btn-primary"
+                        [disabled]="selectForm.invalid">Submit</button>
+
+                    </div>
+                    
+
+
+                </div>
+
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="card mt-4">
+
+
+        <app-parent class="text-center"></app-parent>
+    </div>
+</div>

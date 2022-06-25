@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="card mt-4 bg-warning">
+        
+        <div class="h4">i am the child of parent component and i show the list that he send me </div>
+
+
+
+        <div class="card mt-4 mb-4 ms-4 me-4 bg-secondary" *ngFor="let user of userList">
+
+
+            <div class="h3">Name</div>
+            <div class="h2">{{user.name}}</div>
+
+            <div class="h2">Id</div>
+            <div class="h3">{{user.id}}</div>
+
+            <div class="h2">Car</div>
+            <div class="h2">{{user.car?.name}}</div>
+
+
+        </div>
+
+
+
+
+    </div>
+</div>

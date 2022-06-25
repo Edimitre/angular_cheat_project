@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card mt-4 bg-info">
+
+        <div class="h4">i am parent component im only showing the user that is coming from the form in select component
+        </div>
+
+        <p>{{userFromForm | json}}</p>
+    </div>
+
+</div>
+
+<app-child [userList]="userList"></app-child>
