@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SelectComponent } from './component/select/select.component';
 import { ParentComponent } from './component/parent/parent.component';
-import { ReactiveFormsModule, FormsModule, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ChildComponent } from './component/child/child.component';
 import { HttpClientModule} from '@angular/common/http';
 
