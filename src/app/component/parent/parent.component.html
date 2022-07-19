@@ -1,12 +1,24 @@
-<div class="container">
+<div class="container text-center">
     <div class="card mt-4 bg-info">
 
-        <div class="h4">i am parent component im only showing the user that is coming from the form in select component
-        </div>
+        <p class="h4">i am parent component im only showing the user that is coming from the form in select component
+        
+        </p>
+        <br>
+        <span>this shared object is global can be found from service</span>
 
         <p>{{userFromForm | json}}</p>
+
+        <div>
+            <button class="btn btn-outline-warning" (click)="addReceivedUserToUserList()">Add the inserted user to child component with (event)</button>
+
+        </div>
+
+        
     </div>
+
+    
 
 </div>
 
-<app-child [userList]="userList"></app-child>
+<app-child [userList$]="userList$"></app-child>

@@ -5,7 +5,7 @@ import { MyModuleRoutingModule } from './my-module-routing.module';
 
 
 
-console.warn("lazy component loaded")
+console.warn("lazy module loaded")
 @NgModule({
   declarations: [],
   imports: [

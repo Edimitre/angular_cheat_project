@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { User } from '../model/user';
 import { Car } from '../model/car';
 import { HttpClient } from '@angular/common/http';
@@ -16,6 +16,8 @@ export class DummyService {
 
   messageObject = this.messageObjectSubject.asObservable();
 
+  userList: User[] = []
+
   constructor(private httpService:HttpClient) { }
 
   changeMessage(message: string) {
@@ -31,7 +33,7 @@ export class DummyService {
 
   }
 
-  getDummyUsers(): User[] {
+  getDummyUsers(): Observable<User[]> {
 
     let car1 = { "name": "Benz Mercedes" }
     let car2 = { "name": "Audi" }
@@ -42,9 +44,15 @@ export class DummyService {
 
     let user3 = { "id": 3, "name": "lenci" ,"car":car1}
 
-    let userList: User[] = [user1, user2, user3]
+    this.userList = [user1, user2, user3]
 
-    return userList
+    var myUserList$ = of(this.userList)
+    
+    return myUserList$
+  }
+
+  addUserToList(user:User){
+    this.userList.push(user)
   }
 
   getUserCars(): Car[] {

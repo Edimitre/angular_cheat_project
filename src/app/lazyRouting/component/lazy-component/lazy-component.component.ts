@@ -11,7 +11,7 @@ export class LazyComponentComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("lazy component call is here ");
+    window.alert('lazy component loaded succesfully ')
     
   }
 

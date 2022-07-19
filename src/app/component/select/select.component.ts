@@ -15,7 +15,7 @@ export class SelectComponent implements OnInit {
 
   carList: Car[] = []
 
-  userList!: User[]
+  
 
   selectForm!: FormGroup;
 
@@ -29,7 +29,7 @@ export class SelectComponent implements OnInit {
 
     this.carList = this.dummyService.getUserCars()
 
-    this.userList = this.dummyService.getDummyUsers()
+    
 
 
 
